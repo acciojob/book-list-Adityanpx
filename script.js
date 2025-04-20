@@ -1,31 +1,37 @@
 //your JS code here. If required.
-document.getElementById("submit").addEventListener("click", function (){
-	const title= document.getElementById("title").value;
-	const author= document.getElementById("author").value;
-	const isbn = document.getElementById("isbn").value;
+let btn = document.getElementById("submit");
+let booklist = document.querySelector("#book-list");
 
-	if(!title || !author || !isbn){
-		alert("please fill all the details");
-		return;
-	}
+btn.addEventListener("click", (e) => {
+	e.preventDefault();
+    e.preventDefault(); // avoid page reload if in a form
 
-	const table = document.getElementById("book-list");
+    let t = document.getElementById("title").value.trim();
+    let a = document.getElementById("author").value.trim();
+    let i = document.getElementById("isbn").value.trim();
 
-	const row = document.createElement("tr");
-	row.innerHTML= `<td>${title}</td>
-	<td>${author}</td>
-	<td>${isbn}</td>
-	<td><button class="delete">X</button></td>`
+    if (t && a && i) {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${t}</td>
+            <td>${a}</td>
+            <td>${i}</td>
+            <td><button class="delete">X</button></td>
+        `;
+        booklist.appendChild(row);
 
-	table.appendChild(row)
-	document.getElementById("title").value = '';
-	document.getElementById("author").value = '';
+        // Clear the input fields
+        document.getElementById("title").value = "";
+        document.getElementById("author").value = "";
+        document.getElementById("isbn").value = "";
+    } else {
+        alert("Please fill all the fields");
+    }
+});
 
-	document.getElementById("isbn").value = '';
-})
-
-document.getElementById("book-list").addEventListener("click",function(event){
-	if(event.target.classList.contains("delete")){
-		event.target.closest("tr").remove();
-	}
-})
+// Delete row on clicking X
+booklist.addEventListener("click", (e) => {
+    if (e.target.classList.contains("delete")) {
+        e.target.closest("tr").remove();
+    }
+});

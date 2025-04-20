@@ -4,31 +4,39 @@
 	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-	<h1>MyBookList</h1>
+	<h1>My<span class="bl">Book</span>List</h1>
 	<div class="form-group">
-		<label>Title</label>
-		<input type="text" id="title"/>
-		<label>Author</label>
-		<input type="text" id="author"/>
-		<label>ISBN#</label>
-		<input type="text" id="isbn"/>
-		<button id="submit">Add Book</button>
-	</div>
+		<form>
+			<label>Title</label>
+			<input type="text" id="title"/>
+			<br>
+			<label>Author</label>
+			<input type="text" id="author"/>
+			<br>
 
-	<table class="table" border="1">
+			<label>ISBN#</label>
+			<input type="text" id="isbn"/>
+						<br>
+
+			<button id="submit"> Submit </button>
+		</form>
+	</div>
+	<div class="table table-striped">
+		<table>
 		<thead>
 			<tr>
 				<th>Title</th>
 				<th>Author</th>
 				<th>ISBN#</th>
-				<th>Action</th>
+				<th></th>
 			</tr>
 		</thead>
-		<tbody id="book-list">
-			<!-- Books will appear here -->
-		</tbody>
-	</table>
-
+			<tbody id="book-list">
+				
+			</tbody>
+		</table>
+	</div>
+	
 	<script type="text/javascript" src="./script.js"></script>
 </body>
 </html>

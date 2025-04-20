@@ -1,34 +1,38 @@
 /*  your css code here. If applicable */
-
-body {
-	font-family: Arial, sans-serif;
-	text-align: center;
-	margin-top: 20px;
+h1 {
+	display:flex;
+	justify-content:center;
+}
+#title,
+#author,
+#isbn {
+	display:flex;
+	width:100%;
 }
 
-.form-group {
-	margin-bottom: 20px;
+#submit {
+	background-color: blue;
+	color:white;
+	border-radius:0.25rem;
+	border:none;
+	padding:6px;
 }
 
-input {
-	margin: 5px;
-	padding: 5px;
+.table {
+	width:100%;
+	border:collapse;
+}
+.table th, .table td {
+  padding: 10px;
 }
 
-button {
-	padding: 5px 10px;
-	cursor: pointer;
+.delete {
+	background-color:red;
+	color:white;
+	padding:0.2rem;
 }
 
-table {
-	width: 80%;
-	margin: 0 auto;
-	border-collapse: collapse;
-}
 
-th, td {
-	padding: 10px;
-	text-align: center;
-}
 
-	
+
+
